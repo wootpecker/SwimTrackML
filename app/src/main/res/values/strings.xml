@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SwimTrackML</string>
+    <string name="start_db">Start</string>
+</resources>

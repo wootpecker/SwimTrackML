@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "743376024422",
+    "project_id": "swimtrackml",
+    "storage_bucket": "swimtrackml.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743376024422:android:be64bb4cdc2cf1297f8ea7",
+        "android_client_info": {
+          "package_name": "com.example.swimtrackml"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgrxvu-XCUia-U9nfKDtfzcNaIMt6LXVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743376024422:android:fffbccca3366d9937f8ea7",
+        "android_client_info": {
+          "package_name": "com.example.wear"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgrxvu-XCUia-U9nfKDtfzcNaIMt6LXVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
