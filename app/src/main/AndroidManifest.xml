@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!--<uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS"/>  If higher Sampling Rate is needed >200Hz-->
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -29,6 +29,11 @@
         <activity android:name=".MySensorActivity"/>
         <activity android:name=".concreteML"/>
         <activity android:name=".testml"/>
+        <activity android:name=".GatherDataActivity"/>
+        <activity android:name=".ShowDataActivity"/>
+        <activity android:name=".SwimmingMLActivity"/>
+        <activity android:name=".ShowDataSeecondTestActivity"/>
+        <activity android:name=".ShowDataActivityLineChart"/>
     </application>
 
 

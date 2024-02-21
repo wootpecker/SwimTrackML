@@ -1,4 +1,4 @@
 package com.example.swimtrackml
 
-class SwimDB {
+class ShowCSVActivity {
 }

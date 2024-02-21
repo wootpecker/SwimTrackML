@@ -1,19 +1,29 @@
 package com.example.swimtrackml
 
+
 import android.content.res.AssetFileDescriptor
 import android.os.Bundle
+import android.os.Environment
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toast
+import androidx.activity.ComponentActivity
+import com.opencsv.CSVReader
 import org.tensorflow.lite.Interpreter
+import java.io.BufferedReader
+import java.io.File
 import java.io.FileInputStream
+import java.io.FileReader
 import java.io.IOException
+import java.io.InputStreamReader
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
+import java.nio.charset.Charset
 
-class concreteML() : AppCompatActivity() {
+
+class concreteML() : ComponentActivity() {
     var interpreter: Interpreter? = null
     var etxt_cement: EditText? = null
     var etxt_blastFurnace: EditText? = null
@@ -62,7 +72,7 @@ class concreteML() : AppCompatActivity() {
         etxt_age = findViewById(R.id.et_Age)
         txt_resultBox = findViewById(R.id.txt_results)
         predictButton = findViewById(R.id.btn_predict)
-        predictButton!!.setOnClickListener(View.OnClickListener {
+        /*predictButton!!.setOnClickListener(View.OnClickListener {
             if (etxt_cement?.length() == 0) {
                 etxt_cement?.requestFocus()
                 etxt_cement?.setError("Please fill this field")
@@ -105,22 +115,81 @@ class concreteML() : AppCompatActivity() {
                     .toFloat() - min[6]) / (max[6] - min[6]))
                 concreteArray[0][7] =
                     ((etxt_age?.getText().toString().toFloat() - min[7]) / (max[7] - min[7]))
-                var predictions = doInference(concreteArray)
-                predictions = Math.round(predictions).toFloat()
+                print(concreteArray)
+
+                var predictor = arrayOf(-3.088468825, 14.89727137,	5.783754993	,1.992270079,	-1.236496316	,-0.291321496,	-28.76401567	,-23.20131837	,-55.67869994,	1020.956745,	3590.949392)
+                var predictializer=DoubleArray(11)
+                for(i in predictor.indices){
+                    predictializer[i] = predictor[i]
+                }
+                var predicament = Array(1) { DoubleArray(8) }
+                predicament[0]=predictializer
+                var predictions = doInference(predicament)
+                predictions = Math.round(predictions).toDouble()
                 txt_resultBox!!.text = "Estimated Concrete compressive strength is $predictions MPa"
             }
+        })*/
+        predictButton!!.setOnClickListener(View.OnClickListener {
+            readData()
         })
     }
 
-    fun doInference(input: Array<FloatArray>?): Float {
-        val output = Array(1) { FloatArray(1) }
+    private fun readData() {
+        val `is` = resources.openRawResource(R.raw.swimmingfreestyle)
+        val reader = BufferedReader(
+            InputStreamReader(`is`, Charset.forName("UTF-8"))
+        )
+        var line = ""
+        try {
+            while (reader.readLine().also { line = it } != null) {
+                // Split the line into different tokens (using the comma as a separator).
+                val tokens = line.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+                tokens[0]
+                
+                Toast.makeText(this, "The specified file was found", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+            Toast.makeText(this, "The specified file was not found", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun readData2() {
+        try {
+            val csvfile =
+                File(
+                    Environment.getExternalStorageDirectory()
+                        .toString() + "/swimmingfreestyle.csv"
+                )
+            val csvfileString =
+                this.getApplicationInfo().dataDir + File.separatorChar + "swimmingfreestyle.csv"
+            val csvfile2 = File(csvfileString);
+            val reader = CSVReader(FileReader(csvfile.absolutePath))
+            var nextLine: Array<String>
+            var count = 0;
+            while (reader.readNext().also { nextLine = it } != null) {
+
+                // nextLine[] is an array of values from the line
+                nextLine[2]
+                txt_resultBox!!.text = "nextline $nextLine[2] MPa"
+                println(nextLine[0] + nextLine[1] + "etc...")
+                count++
+
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(this, "The specified file was not found", Toast.LENGTH_SHORT).show()
+        }
+    }
+    
+    fun doInference(input: Array<DoubleArray>?): Double {
+        val output = Array(1) { DoubleArray(1) }
         interpreter?.run(input, output)
         return output[0][0]
     }
 
     @Throws(IOException::class)
     private fun loadModelFile(): MappedByteBuffer {
-        val assetFileDescriptor: AssetFileDescriptor = this.getAssets().openFd("Concrete.tflite")
+        val assetFileDescriptor: AssetFileDescriptor = this.getAssets().openFd("swimming.tflite")
         val fileInputStream: FileInputStream =
             FileInputStream(assetFileDescriptor.getFileDescriptor())
         val fileChannel = fileInputStream.channel
@@ -129,3 +198,4 @@ class concreteML() : AppCompatActivity() {
         return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, length)
     }
 }
+

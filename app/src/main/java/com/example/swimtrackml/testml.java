@@ -1,5 +1,6 @@
 package com.example.swimtrackml;
 
+import android.app.Activity;
 import android.content.res.AssetFileDescriptor;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,7 @@ import java.nio.channels.FileChannel;
 import org.tensorflow.lite.Interpreter;
 
 
-public class testml extends AppCompatActivity {
+public class testml extends Activity {
 
     Interpreter interpreter;
 

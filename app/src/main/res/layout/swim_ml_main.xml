@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/txt_swim_samples"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:inputType="number"
+        android:hint="Put Samle Area" />
+
+    <TextView
+        android:id="@+id/txt_swim_transition"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:hint="Transition" />
+
+    <TextView
+        android:id="@+id/txt_swim_crawl"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:hint="Crawl" />
+    <TextView
+        android:id="@+id/txt_swim_breaststroke"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:hint="Breaststroke" />
+    <TextView
+        android:id="@+id/txt_swim_backstroke"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:hint="Backstroke" />
+    <TextView
+        android:id="@+id/txt_swim_butterfly"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:hint="Butterfly" />
+
+
+    <Button
+        android:id="@+id/btn_load_data"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:text="Load Data"
+        android:textColor="#E9C46A" />
+
+    <Button
+        android:id="@+id/btn_predict"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:text="Predict"
+        android:textColor="#E9C46A" />
+    <TextView
+        android:id="@+id/txt_results"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:gravity="center"
+        android:textColor="#264653"
+        android:textSize="20sp" />
+</LinearLayout>

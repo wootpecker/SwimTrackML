@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/start_gather_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_gather_data" />
+
+    <Button
+        android:id="@+id/start_show_sensor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_show_sensor" />
+
+    <Button
+        android:id="@+id/start_show_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_show_data" />
+
+    <Button
+        android:id="@+id/start_do_ml_prediction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_do_ml_prediction" />
+
+    <Button
+        android:id="@+id/test_concrete_prediction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/test_concrete_prediction" />
+
+    <Button
+        android:id="@+id/test_concrete_java"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Test_Concrete_Java" />
+
+    <Button
+        android:id="@+id/show_line_chart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_line_chart" />
+</LinearLayout>
