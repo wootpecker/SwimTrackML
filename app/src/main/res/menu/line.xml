@@ -7,7 +7,7 @@
     </item>
     <item
         android:id="@+id/actionToggleValues"
-        android:title="@string/actionToggleValues">
+        android:title="@string/actionSaveSensorData">
     </item>
     <item
         android:id="@+id/actionToggleIcons"

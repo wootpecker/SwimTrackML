@@ -99,3 +99,7 @@ abstract class DemoBase : Activity() {
         private const val PERMISSION_STORAGE = 0
     }
 }
+
+
+
+

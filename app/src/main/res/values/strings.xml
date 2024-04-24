@@ -5,12 +5,12 @@
     <string name="start_show_sensor">Show Available Sensors</string>
     <string name="start_show_data">Show Data</string>
     <string name="start_do_ml_prediction">Do ML Prediction</string>
-    <string name="test_concrete_prediction">TEST: Concrete Prediction</string>
-    <string name="Test_Concrete_Java">Test: Concrete in Java</string>
+    <string name="gather_walking_data">Gather Walking Data</string>
+    <string name="Save_Sensor_As_CSV">Save Sensor As CSV</string>
     <string name="Show_Data_Btn_show">Show</string>
     <string name="linechart_txt">Run</string>
     <string name="viewGithub">view Github</string>
-    <string name="actionToggleValues">Toggle Values</string>
+    <string name="actionSaveSensorData">Save Sensor Data</string>
     <string name="actionToggleIcons">Toggle Icons</string>
     <string name="actionToggleFilled">Toggle Filled</string>
     <string name="actionToggleCircles">Toggle Circles</string>
@@ -25,4 +25,6 @@
     <string name="animateXY">Animate XY</string>
     <string name="actionSave">Save</string>
     <string name="show_line_chart">Show Line Chart</string>
+    <string name="actionLoadSensorData">Load Sensor Data</string>
+    <string name="start_measuring">Start Measuring</string>
 </resources>

@@ -129,7 +129,9 @@ class MainActivity : ComponentActivity(), SensorEventListener {
                     "Received new heart rate value: $value"
                 )
                 //heartRateTextView?.setText(getString(R.string.heart_rate_text, value.toInt()))
-                heartRateTextView?.setText(value.toInt())
+                heartRateTextView?.text = value.toInt().toString()
+
+                //heartRateTextView?.setText(value.toInt())
                 // Add a new line to file where the heart rate is our value and the step count is empty
                 writeSensorDataToFile(String.format(Locale.GERMAN, "%.0f", value), "")
             } else if (sensorEvent.sensor.type == Sensor.TYPE_STEP_COUNTER) {

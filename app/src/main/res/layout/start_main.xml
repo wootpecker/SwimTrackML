@@ -29,16 +29,16 @@
         android:text="@string/start_do_ml_prediction" />
 
     <Button
-        android:id="@+id/test_concrete_prediction"
+        android:id="@+id/gather_walking_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/test_concrete_prediction" />
+        android:text="@string/gather_walking_data" />
 
     <Button
-        android:id="@+id/test_concrete_java"
+        android:id="@+id/save_sensor_as_csv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Test_Concrete_Java" />
+        android:text="@string/Save_Sensor_As_CSV" />
 
     <Button
         android:id="@+id/show_line_chart"
